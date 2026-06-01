@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lunara Fashion & Crafts | Elegance Redefined</title>
+    <style>
+        /* Elegant Premium Theme Variables */
+        :root {
+            --bg-dark: #09090b;
+            --bg-card: #18181b;
+            --primary-rose: #fda4af;
+            --primary-glow: #f43f5e;
+            --accent-gold: #fbbf24;
+            --text-light: #f4f4f5;
+            --text-muted: #a1a1aa;
+            --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* Reusable Section Titles */
+        .section-title {
+            text-align: center;
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            background: linear-gradient(135deg, #ffffff, var(--primary-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: var(--text-muted);
+            margin-top: 10px;
+            font-size: 1.1rem;
+        }
+
+        .title-line {
+            width: 60px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-glow), var(--accent-gold));
+            margin: 20px auto 50px auto;
+            border-radius: 5px;
+        }
+
+        /* Modern Aesthetic Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 50px;
+            background-color: rgba(9, 9, 11, 0.85);
+            backdrop-filter: blur(12px);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #27272a;
+        }
+
+        .navbar .logo {
+            font-size: 1.7rem;
+            font-weight: 800;
+            letter-spacing: 1.5px;
+            font-family: 'Georgia', serif;
+        }
+
+        .navbar .logo span {
+            color: var(--primary-rose);
+            text-shadow: 0 0 10px rgba(253, 164, 175, 0.3);
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 35px;
+        }
+
+        .nav-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.5px;
+            transition: var(--transition-smooth);
+        }
+
+        .nav-links a:hover {
+            color: var(--primary-rose);
+        }
+
+        /* Stunning Hero Section */
+        .hero {
+            background: radial-gradient(circle at top right, #27161a, var(--bg-dark));
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 60px 20px;
+        }
+
+        .hero-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            flex: 1;
+            min-width: 320px;
+        }
+
+        .hero-tag {
+            background: rgba(254, 164, 175, 0.1);
+            color: var(--primary-rose);
+            padding: 6px 16px;
+            border-radius: 50px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 25px;
+            border: 1px solid rgba(254, 164, 175, 0.2);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .hero-content h1 {
+            font-size: 4rem;
+            line-height: 1.15;
+            margin-bottom: 25px;
+            font-weight: 700;
+            font-family: 'Georgia', serif;
+            background: linear-gradient(135deg, #ffffff 40%, var(--primary-rose));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-content p {
+            color: var(--text-muted);
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .hero-btn {
+            padding: 16px 36px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+            transition: var(--transition-smooth);
+            background: linear-gradient(135deg, var(--primary-rose), var(--primary-glow));
+            color: #000;
+            box-shadow: 0 10px 25px -5px rgba(244, 63, 94, 0.3);
+        }
+
+        .hero-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px -5px rgba(244, 63, 94, 0.5);
+        }
+
+        .hero-gallery {
+            flex: 1;
+            min-width: 320px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hero-img-box {
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.5);
+            transition: var(--transition-smooth);
+        }
+
+        .hero-img-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition-smooth);
+        }
+
+        .hero-img-box:nth-child(1) { transform: translateY(30px); height: 320px; }
+        .hero-img-box:nth-child(2) { height: 380px; }
+
+        /* Products Grid Layout */
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .product-card {
+            background-color: var(--bg-card);
+            border: 1px solid #27272a;
+            border-radius: 24px;
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .product-card:hover {
+            transform: translateY(-12px);
+            border-color: rgba(253, 164, 175, 0.4);
+            box-shadow: 0 30px 50px -15px rgba(244, 63, 94, 0.15);
+        }
+
+        .product-img-wrapper {
+            width: 100%;
+            height: 340px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .product-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+
+        .category-badge {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            background: rgba(9, 9, 11, 0.75);
+            backdrop-filter: blur(5px);
+            color: var(--accent-gold);
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            border: 1px solid rgba(251, 191, 36, 0.3);
+        }
+
+        .product-info {
+            padding: 25px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+        }
+
+        .product-info h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            font-family: 'Georgia', serif;
+        }
+
+        .product-info p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+            flex-grow: 1;
+        }
+
+        .product-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: auto;
+        }
+
+        .product-price {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--primary-rose);
+        }
+
+        .btn-order {
+            background-color: transparent;
+            border: 2px solid var(--primary-rose);
+            color: var(--primary-rose);
+            padding: 10px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: var(--transition-smooth);
+        }
+
+        .btn-order:hover {
+            background-color: var(--primary-rose);
+            color: #000;
+        }
+
+        /* Modern Popup Modal Styling */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(9, 9, 11, 0.8);
+            backdrop-filter: blur(8px);
+            z-index: 2000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: var(--transition-smooth);
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .modal-box {
+            background-color: var(--bg-card);
+            border: 1px solid #27272a;
+            padding: 40px;
+            border-radius: 24px;
+            width: 100%;
+            max-width: 500px;
+            box-shadow: 0 25px 50px -12px rgba(244, 63, 94, 0.2);
+            transform: scale(0.9);
+            transition: var(--transition-smooth);
+            position: relative;
+        }
+
+        .modal-overlay.active .modal-box {
+            transform: scale(1);
+        }
+
+        .modal-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 8px;
+            font-family: 'Georgia', serif;
+            color: var(--primary-rose);
+        }
+
+        .modal-box p {
+            color: var(--text-muted);
+            font-size: 0.9rem;
+            margin-bottom: 25px;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: transparent;
+            border: none;
+            color: var(--text-muted);
+            font-size: 1.5rem;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+        }
+
+        .close-modal:hover {
+            color: var(--primary-rose);
+        }
+
+        .modal-form-field {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 18px;
+        }
+
+        .modal-form-field label {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 6px;
+            color: var(--text-light);
+        }
+
+        .modal-box input, .modal-box textarea {
+            background-color: #09090b;
+            border: 1px solid #27272a;
+            padding: 14px;
+            border-radius: 10px;
+            color: white;
+            font-size: 0.95rem;
+            outline: none;
+            transition: var(--transition-smooth);
+            width: 100%;
+        }
+
+        .modal-box input:focus, .modal-box textarea:focus {
+            border-color: var(--primary-rose);
+        }
+
+        /* Contact Section */
+        .contact-wrapper {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .feedback-form-box {
+            background-color: var(--bg-card);
+            padding: 45px;
+            border-radius: 28px;
+            border: 1px solid #27272a;
+        }
+
+        .feedback-form-box h3 {
+            font-size: 1.6rem;
+            margin-bottom: 10px;
+            font-family: 'Georgia', serif;
+        }
+
+        .feedback-form-box p {
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            font-size: 0.95rem;
+        }
+
+        .input-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .btn-submit {
+            background: linear-gradient(135deg, var(--primary-rose), var(--primary-glow));
+            color: #000;
+            border: none;
+            padding: 15px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: var(--transition-smooth);
+            font-size: 0.95rem;
+            width: 100%;
+            text-align: center;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(244, 63, 94, 0.3);
+        }
+
+        .info-panel {
+            padding: 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            height: 100%;
+        }
+
+        .info-panel h3 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            color: var(--primary-rose);
+            font-family: 'Georgia', serif;
+        }
+
+        .info-panel p {
+            color: var(--text-muted);
+            margin-bottom: 35px;
+        }
+
+        .social-link {
+            display: inline-block;
+            background-color: #18181b;
+            color: var(--text-light);
+            text-decoration: none;
+            padding: 14px 28px;
+            border-radius: 12px;
+            font-weight: 600;
+            border: 1px solid #27272a;
+            transition: var(--transition-smooth);
+            text-align: center;
+        }
+
+        .social-link:hover {
+            background-color: #27272a;
+            border-color: var(--accent-gold);
+            color: var(--accent-gold);
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px;
+            background-color: #040405;
+            border-top: 1px solid #18181b;
+            color: var(--text-muted);
+        }
+
+        @media (max-width: 900px) {
+            .contact-wrapper { grid-template-columns: 1fr; }
+            .hero-container { flex-direction: column; text-align: center; }
+            .hero-gallery { width: 100%; max-width: 500px; margin: 0 auto; }
+            .navbar { flex-direction: column; gap: 15px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Interactive Popup Modal Form for Order Details -->
+    <div class="modal-overlay" id="orderModal">
+        <div class="modal-box">
+            <button class="close-modal" onclick="closeOrderModal()">&times;</button>
+            <h3>Complete Your Order</h3>
+            <p id="modalProductDetails">Please enter your details to finalize your purchase request.</p>
+            
+            <form action="https://api.web3forms.com/submit" method="POST">
+                <!-- Web3Forms Config Key -->
+                <input type="hidden" name="access_key" value="f61be8dc-3fa2-4c7b-ac22-720190daa069">
+                <input type="hidden" name="subject" id="emailSubject" value="New Product Order Received">
+                
+                <!-- System Captured Item Properties -->
+                <input type="hidden" name="ordered_product" id="emailProdName">
+                <input type="hidden" name="product_price" id="emailProdPrice">
+
+                <!-- Customer Details Requested -->
+                <div class="modal-form-field">
+                    <label>Your Name (නම)</label>
+                    <input type="text" name="customer_name" placeholder="Enter your full name" required>
+                </div>
+                <div class="modal-form-field">
+                    <label>Delivery Address (ලිපිනය)</label>
+                    <textarea name="customer_address" rows="3" placeholder="Enter your shipping address" required></textarea>
+                </div>
+                <div class="modal-form-field">
+                    <label>WhatsApp Number (දුරකථන අංකය)</label>
+                    <input type="tel" name="customer_whatsapp" placeholder="e.g., 0771234567" required>
+                </div>
+                <div class="modal-form-field">
+                    <label>Special Notes / Custom Description (වෙනත් විස්තර)</label>
+                    <textarea name="order_notes" rows="2" placeholder="Any size preferences, color choice or custom requests..."></textarea>
+                </div>
+
+                <button type="submit" class="btn-submit">Confirm Order via Email</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Navigation Menu Bar -->
+    <nav class="navbar">
+        <div class="logo">Lunara <span>Crafts</span></div>
+        <ul class="nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#products">Collection</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Showcase Section -->
+    <header id="home" class="hero">
+        <div class="hero-container">
+            <div class="hero-content">
+                <span class="hero-tag">Handcrafted Elegance</span>
+                <h1>Aesthetic Styles Designed For You</h1>
+                <p>Explore our beautiful collections of custom fashion, curated handmade items, trendy accessories, and custom T-shirts tailored for modern trends.</p>
+                <a href="#products" class="hero-btn">Discover Shop</a>
+            </div>
+            <div class="hero-gallery">
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?q=80&w=500&auto=format&fit=crop" alt="Premium Girls Fashion Wear">
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1549298916-b41d501d3772?q=80&w=500&auto=format&fit=crop" alt="Aesthetic Crafts Show">
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Products Collection Section -->
+    <section id="products" class="products">
+        <div class="container">
+            <h2 class="section-title">Our Featured Products</h2>
+            <p class="section-subtitle">Exquisite design items crafted with unique artistic focus</p>
+            <div class="title-line"></div>
+
+            <div class="products-grid">
+                <!-- Product 1: Bags -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="category-badge">Bags</span>
+                        <img src="https://images.unsplash.com/photo-1584917865442-de89df76afd3?q=80&w=500&auto=format&fit=crop" alt="Handcrafted Premium Bag">
+                    </div>
+                    <div class="product-info">
+                        <h3>Boho Macrame Luxury Bag</h3>
+                        <p>Beautifully structured woven craft bag with premium handling detailing.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$24.00</span>
+                            <button class="btn-order" onclick="openOrderModal('Boho Macrame Luxury Bag', '$24.00')">Buy via Email</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 2: Rings / Jewelry -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="category-badge">Jewelry</span>
+                        <img src="https://images.unsplash.com/photo-1605100804763-247f67b3557e?q=80&w=500&auto=format&fit=crop" alt="Aesthetic Trendy Ring">
+                    </div>
+                    <div class="product-info">
+                        <h3>Elegant Aura Custom Ring</h3>
+                        <p>Minimalist timeless fashion ring designed perfectly to elevate casual aesthetics.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$12.00</span>
+                            <button class="btn-order" onclick="openOrderModal('Elegant Aura Custom Ring', '$12.00')">Buy via Email</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 3: Gifts / Crafts -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="category-badge">Gifts</span>
+                        <img src="https://images.unsplash.com/photo-1513201099495-a6998e4d164a?q=80&w=500&auto=format&fit=crop" alt="Premium Handcrafted Gift Pack">
+                    </div>
+                    <div class="product-info">
+                        <h3>Celestial Custom Gift Box</h3>
+                        <p>A combination of mini crafts, scented artistic setups, and delicate tokens.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$18.00</span>
+                            <button class="btn-order" onclick="openOrderModal('Celestial Custom Gift Box', '$18.00')">Buy via Email</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product 4: T-Shirts -->
+                <div class="product-card">
+                    <div class="product-img-wrapper">
+                        <span class="category-badge">T-Shirts</span>
+                        <img src="https://images.unsplash.com/photo-1521572267360-ee0c2909d518?q=80&w=500&auto=format&fit=crop" alt="Aesthetic Graphic Tee">
+                    </div>
+                    <div class="product-info">
+                        <h3>Aesthetic Lunara Oversized Tee</h3>
+                        <p>Premium comfortable fabric featuring modern minimalist graphic alignments.</p>
+                        <div class="product-footer">
+                            <span class="product-price">$20.00</span>
+                            <button class="btn-order" onclick="openOrderModal('Aesthetic Lunara Oversized Tee', '$20.00')">Buy via Email</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Connect & Feedback Form Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Let's Connect</h2>
+            <p class="section-subtitle">Share your valuable suggestions or customized inquiries with us</p>
+            <div class="title-line"></div>
+
+            <div class="contact-wrapper">
+                <form class="feedback-form-box" action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="access_key" value="f61be8dc-3fa2-4c7b-ac22-720190daa069">
+                    <input type="hidden" name="subject" value="New Customer Feedback Received - Lunara Crafts">
+                    
+                    <h3>Write Us a Message</h3>
+                    <p>We read every submission to keep growing and customizing our crafts for you.</p>
+
+                    <div class="input-group">
+                        <input type="text" name="customer_name" placeholder="Your Name" required>
+                        <input type="email" name="customer_email" placeholder="Your Email Address" required>
+                    </div>
+                    <div style="margin-bottom: 20px;">
+                        <textarea name="customer_thoughts" placeholder="Type your thoughts, feedback, or custom product designs here..." rows="5" required></textarea>
+                    </div>
+                    <button type="submit" class="btn-submit">Submit Feedback</button>
+                </form>
+
+                <div class="info-panel">
+                    <h3>Get in Touch Directly</h3>
+                    <p>Have direct business questions, special design request customizations, or wholesale ordering requirements? Our support updates continuously.</p>
+                    <a href="#" class="social-link">✨ Follow Our Latest Instagram Art</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Lunara Fashion & Crafts. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Modal Overlay Control Logic
+        const modal = document.getElementById('orderModal');
+
+        function openOrderModal(itemName, itemPrice) {
+            // Update hidden system configurations
+            document.getElementById('emailSubject').value = "🚨 New Order Request: " + itemName;
+            document.getElementById('emailProdName').value = itemName;
+            document.getElementById('emailProdPrice').value = itemPrice;
+            
+            // Render context changes into layout UI
+            document.getElementById('modalProductDetails').innerText = 'You are purchasing: ' + itemName + ' (' + itemPrice + '). Please supply your delivery credentials below.';
+            
+            // Pop active state overlay classes
+            modal.classList.add('active');
+        }
+
+        function closeOrderModal() {
+            modal.classList.remove('active');
+        }
+
+        // Close form backdrop automatically if clicked outside box boundaries
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                closeOrderModal();
+            }
+        }
+    </script>
+</body>
+</html>
